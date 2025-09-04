@@ -11,37 +11,49 @@ const products = [
     id: 1,
     name: "Nike Sports 302",
     price: 930.80,
-    image: "https://nb.scene7.com/is/image/NB/mr530sg_nb_02_i?$pdpflexf2$&wid=440&hei=440"
+    image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&h=800&fit=crop",
+    brand: "Nike",
+    description: "Experience ultimate comfort with Nike Sports 302. Featuring advanced cushioning technology and breathable mesh upper, these sneakers are perfect for running, training, and everyday activities. The lightweight design and responsive sole provide excellent support for all-day wear."
   },
   {
     id: 2,
     name: "Adidas Advantage",
     price: 250.00,
-    image: "https://nb.scene7.com/is/image/NB/mr530sg_nb_02_i?$pdpflexf2$&wid=440&hei=440"
+    image: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=800&h=800&fit=crop",
+    brand: "Adidas",
+    description: "Classic tennis-inspired design meets modern comfort. The Adidas Advantage features a clean white leather upper with signature three stripes. Its versatile style makes it perfect for casual wear, while the durable construction ensures long-lasting quality."
   },
   {
     id: 3,
     name: "Converse Chuck Taylor",
     price: 799.00,
-    image: "https://nb.scene7.com/is/image/NB/mr530sg_nb_02_i?$pdpflexf2$&wid=440&hei=440"
+    image: "https://images.unsplash.com/photo-1607522370275-f14206abe5d3?w=800&h=800&fit=crop",
+    brand: "Converse",
+    description: "The iconic Chuck Taylor All Star that started it all. With its timeless high-top silhouette and canvas construction, this legendary sneaker has been a symbol of self-expression and rebellion for decades. Perfect for adding vintage flair to any outfit."
   },
   {
     id: 4,
     name: "Puma RS-X",
     price: 1200.00,
-    image: "https://nb.scene7.com/is/image/NB/mr530sg_nb_02_i?$pdpflexf2$&wid=440&hei=440"
+    image: "https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2?w=800&h=800&fit=crop",
+    brand: "Puma",
+    description: "Bold and futuristic design meets retro running heritage. The RS-X features chunky proportions, mixed materials, and vibrant colorways. With superior cushioning and unique styling, these sneakers make a statement while delivering exceptional comfort."
   },
   {
     id: 5,
     name: "New Balance 530",
     price: 1450.00,
-    image: "https://nb.scene7.com/is/image/NB/mr530sg_nb_02_i?$pdpflexf2$&wid=440&hei=440"
+    image: "https://images.unsplash.com/photo-1600269452121-4f2416e55c28?w=800&h=800&fit=crop",
+    brand: "New Balance",
+    description: "Premium running shoe with cutting-edge technology. The 530 combines ABZORB midsole cushioning with a sleek, modern design. Engineered for performance and style, featuring breathable materials and superior arch support for the ultimate running experience."
   },
   {
     id: 6,
     name: "Vans Old Skool",
     price: 999.00,
-    image: "https://nb.scene7.com/is/image/NB/mr530sg_nb_02_i?$pdpflexf2$&wid=440&hei=440"
+    image: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=800&h=800&fit=crop",
+    brand: "Vans",
+    description: "The original skate shoe that defined street culture. Featuring the iconic side stripe and durable canvas/suede construction. With its waffle outsole and padded collar, the Old Skool offers grip, support, and timeless style for skaters and fashion enthusiasts alike."
   }
 ];
 

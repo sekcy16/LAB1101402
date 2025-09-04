@@ -15,6 +15,7 @@ interface Product {
   name: string;
   price: number;
   image: string;
+  description: string;
 }
 
 interface RouteParams {
@@ -23,7 +24,7 @@ interface RouteParams {
 
 export default function ProductDetail() {
   const { product: productParam } = useLocalSearchParams();
-  
+
   // Parse product from params
   let product = null;
   if (productParam && typeof productParam === 'string') {
@@ -39,16 +40,17 @@ export default function ProductDetail() {
     id: 1,
     name: "Adidas Stan Smith",
     price: 850.99,
-    image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=1200"
+    image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=1200",
+    description: "This is a clean and stylish sneaker with premium leather upper and classic silhouette. Perfect for everyday wear, offering comfort and versatility."
   };
 
   const displayProduct = product || defaultProduct;
-  
+
   return (
     <SafeAreaView style={styles.screen}>
       {/* Back Button */}
       <View style={styles.header}>
-        <TouchableOpacity 
+        <TouchableOpacity
           style={styles.backButton}
           onPress={() => router.back()}
         >
@@ -56,27 +58,24 @@ export default function ProductDetail() {
         </TouchableOpacity>
         <Text style={styles.headerTitle}>Product Detail</Text>
       </View>
-      
+
       <View style={styles.card}>
-        {/* ====== Image (flex: 1.5) ====== */}
         <View style={{ flex: 1.5 }}>
           <Image
             style={styles.productImage}
             source={{
               uri: displayProduct.image,
             }}
+            resizeMode="cover"
           />
         </View>
 
-        {/* ====== Content (flex: 4.5) ====== */}
         <View style={{ flex: 4.5, paddingHorizontal: 16 }}>
-          {/* Title & Price (flex: 1) */}
           <View style={{ flex: 1, justifyContent: 'center' }}>
             <Text style={styles.title}>{displayProduct.name}</Text>
             <Text style={styles.price}>${displayProduct.price}</Text>
           </View>
 
-          {/* Size selector (flex: 1) */}
           <View style={{ flex: 1, justifyContent: 'center' }}>
             <Text style={styles.sectionLabel}>AVAILABLE SIZES</Text>
             <ScrollView
@@ -94,17 +93,12 @@ export default function ProductDetail() {
             </ScrollView>
           </View>
 
-          {/* Description (flex: 2.5) */}
           <View style={{ flex: 2.5 }}>
             <Text style={styles.desc}>
-              This is a clean and stylish sneaker with premium leather upper and
-              classic silhouette. Perfect for everyday wear, offering comfort and
-              versatility. Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit. Phasellus euismod dictum arcu, sed lacinia mi molestie at.
+              {displayProduct.description}
             </Text>
           </View>
 
-          {/* Bottom Actions (Favourite + Add to Cart) (flex: 1) */}
           <View style={{ flex: 1, justifyContent: 'center' }}>
             <View style={styles.bottomRow}>
               <TouchableOpacity style={styles.favBtn} activeOpacity={0.8}>
@@ -137,8 +131,8 @@ const styles = StyleSheet.create({
   },
   productImage: {
     width: '100%',
-    height: '110%',
-    aspectRatio: 1, // ตามโจทย์
+    height: '100%',
+    resizeMode: 'cover',
   },
   title: {
     fontSize: 22,

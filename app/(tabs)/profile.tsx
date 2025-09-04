@@ -12,6 +12,14 @@ import { useAuth } from '../_layout';
 export default function Profile() {
   const { logout } = useAuth();
 
+  const handleSetting = () => {
+    console.log('Navigate to Settings');
+  };
+
+  const handleHelp = () => {
+    console.log('Navigate to Help');
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.content}>
@@ -32,6 +40,24 @@ export default function Profile() {
           <Text style={styles.email}>suranaree@sut.ac.th</Text>
         </View>
 
+        {/* Menu Section */}
+
+          <TouchableOpacity style={styles.menuItem} onPress={handleSetting}>
+            <View style={styles.menuIconWrapper}>
+              <Ionicons name="settings-outline" size={24} color="#4A90E2" />
+            </View>
+            <Text style={styles.menuText}>Setting</Text>
+            <Ionicons name="chevron-forward" size={20} color="#9CA3AF" />
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.menuItem} onPress={handleHelp}>
+            <View style={styles.menuIconWrapper}>
+              <Ionicons name="help-circle-outline" size={24} color="#10B981" />
+            </View>
+            <Text style={styles.menuText}>Help</Text>
+            <Ionicons name="chevron-forward" size={20} color="#9CA3AF" />
+          </TouchableOpacity>
+
         {/* Logout Button */}
         <View style={styles.logoutSection}>
           <TouchableOpacity style={styles.logoutButton} onPress={logout}>
@@ -51,8 +77,6 @@ const styles = StyleSheet.create({
   },
   content: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
     paddingHorizontal: 20,
   },
   header: {
@@ -92,9 +116,47 @@ const styles = StyleSheet.create({
     color: '#6b7280',
     textAlign: 'center',
   },
-  logoutSection: {
+  menuSection: {
+    marginBottom: 30,
+    backgroundColor: '#F9FAFB',
+    borderRadius: 16,
+    paddingVertical: 8,
+  },
+  menuItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingVertical: 16,
     paddingHorizontal: 20,
-    paddingVertical: 30,
+    backgroundColor: 'white',
+    marginVertical: 4,
+    marginHorizontal: 8,
+    borderRadius: 12,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.05,
+    shadowRadius: 2,
+    elevation: 1,
+  },
+  menuIconWrapper: {
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    backgroundColor: '#F3F4F6',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginRight: 16,
+  },
+  menuText: {
+    flex: 1,
+    fontSize: 18,
+    fontWeight: '500',
+    color: '#374151',
+  },
+  logoutSection: {
+    paddingBottom: 30,
   },
   logoutButton: {
     flexDirection: 'row',
